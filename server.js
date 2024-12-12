@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import categorizeRoute from "./routes/categorizeRoute.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,6 +20,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // routers
+app.use(categorizeRoute);
 
 // server
 app.get("/", (req, res) => {
